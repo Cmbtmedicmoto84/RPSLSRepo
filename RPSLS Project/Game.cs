@@ -7,11 +7,12 @@ namespace RPSLS_Project
     class Game
     {
         
-        AIPlayer AIPlayer;
-        Human Human;
+        AIPlayer aIPlayer;
+        Human human;
         public Game()
         {
-
+            aIPlayer = new AIPlayer();
+            human = new Human();
         }
 
     }

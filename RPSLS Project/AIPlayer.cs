@@ -6,11 +6,11 @@ namespace RPSLS_Project
 {
     class AIPlayer : Player
     {
-        public string aIPlayerName;
-
+        private string name;
         public AIPlayer()
         {
-            
+
         }
+
     }
 }
