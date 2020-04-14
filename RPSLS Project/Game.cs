@@ -6,5 +6,13 @@ namespace RPSLS_Project
 {
     class Game
     {
+        
+        AIPlayer AIPlayer;
+        Human Human;
+        public Game()
+        {
+
+        }
+
     }
 }

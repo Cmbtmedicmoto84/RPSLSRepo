@@ -6,10 +6,11 @@ namespace RPSLS_Project
 {
     class AIPlayer : Player
     {
-        public AIPlayer(string name, string moves)
+        public string aIPlayerName;
+
+        public AIPlayer()
         {
-            this.name = name;
-            this.moves = moves;
+            
         }
     }
 }

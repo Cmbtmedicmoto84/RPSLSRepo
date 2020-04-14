@@ -6,10 +6,16 @@ namespace RPSLS_Project
 {
     class Human : Player
     {
-        public Human(string name, string moves)
+        public string humanPlayerName;
+
+        public Human()
         {
-            this.name = name;
-            this.moves = moves;
+            
         }
+        //public Human(string name, string moves)
+        //{
+        //    this.name = name;
+        //    this.moves = moves;
+        //}
     }
 }

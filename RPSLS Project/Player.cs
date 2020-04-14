@@ -8,14 +8,24 @@ namespace RPSLS_Project
     {
         public string name;
         public string moves;
-        public Player()
-        {
-            
-        }
+        public string moves1;
+        public string moves2;
+        public string moves3;
+        public string moves4;
+        public string gestureLists;
+        Human human = new Human();
+        AIPlayer aiplayer = new AIPlayer();
 
-        public Player(string moves)
-        {
-            this.moves = moves;
+
+
+        public Player()
+        {  //                                                  0       1          2          3        4
+            List<string> gestureList = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+            //gestureList.Add("Rock");
+            //gestureList.Add("Paper");
+            //gestureList.Add("Scissors");
+            //gestureList.Add("Lizard");
+            //gestureList.Add("Spock");
         }
     }
 }
