@@ -29,20 +29,27 @@ namespace RPSLS_Project
         public void GameMode()
         {
             Console.WriteLine("Please enter 1 to play against the computer, or enter 2 for Player vs Player battle! \n");
-            string mode = Console.ReadLine();
 
-            switch (mode)
+            bool validChoice = false;
+            while (!validChoice)
             {
-                case "1":
-                    Console.WriteLine("Welcome to the Player vs Computer game of R.P.S.L.S!!");
-                    break;
-                case "2":
-                    Console.WriteLine("Welcome to the Player vs Player game of R.P.S.L.S!!");
-                    break;
-                default:
-                    Console.WriteLine("Choice entered is INVALID!  Please enter 1 to play against the computer, or enter 2 for Player vs Player battle! \n");
-                    string userinput = Console.ReadLine();
-                    break;
+                string mode = Console.ReadLine();
+                switch (mode)
+                {
+                    case "1":
+                        Console.WriteLine("Welcome to the Player vs Computer game of R.P.S.L.S!!");
+                        playerDos = new AIPlayer();
+                        validChoice = true;
+                        break;
+                    case "2":
+                        Console.WriteLine("Welcome to the Player vs Player game of R.P.S.L.S!!");
+                        playerDos = new Human();
+                        validChoice = true;
+                        break;
+                    default:
+                        Console.WriteLine("Choice entered is INVALID!  Please enter 1 to play against the computer, or enter 2 for Player vs Player battle! \n");
+                        break;
+                }
             }
             return;
         }
