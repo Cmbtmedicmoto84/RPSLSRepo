@@ -7,13 +7,13 @@ namespace RPSLS_Project
     abstract class Player
     {
         public int score;
-        public string whatGesture;
+        public string[] whatGesture = { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
  
         public Player()
         {
-
+            
         }
 
-        public abstract void WhatGesture();
+
     }
 }

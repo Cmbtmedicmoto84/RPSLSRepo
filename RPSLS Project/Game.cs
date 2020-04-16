@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RPSLS_Project
 {
@@ -9,6 +7,7 @@ namespace RPSLS_Project
         public int pointsNeedToWin;
         public Player playerUno;
         public Player playerDos;
+        public string[] whatGesture;
         //public string userInput; not sure if i need this here.
 
         public Game()
@@ -53,16 +52,51 @@ namespace RPSLS_Project
             }
             return;
         }
-
-        public override void WhatGesture()
+        public void ChooseWhatGesture()
         {
-           
+            Console.WriteLine("Please choose from the list of moves");
+            Console.WriteLine("Type the corresponding number for the selected move: 0 - Rock, 1 - Paper, 2 - Scissors, 3 - Lizard, 4 - Spock \n");
+
+            bool gestureChoice = false;
+            while(!gestureChoice) 
+            {
+                string gesture = Console.ReadLine();
+                switch (gesture)
+                {
+                    case "0":
+                        Console.WriteLine("Player chooses Rock");
+                        gestureChoice = true;
+                        break;
+                    case "1":
+                        Console.WriteLine("Player chooses Paper");
+                        gestureChoice = true;
+                        break;
+                    case "2":
+                        Console.WriteLine("Player chooses Scissors");
+                        gestureChoice = true;
+                        break;
+                    case "3":
+                        Console.WriteLine("Player chooses Lizard");
+                        gestureChoice = true;
+                        break;
+                    case "4":
+                        Console.WriteLine("Player chooses Spock");
+                        gestureChoice = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection");
+                        break;
+                }
+            }
+            //problem here
         }
+
 
         public void RunGame()
         {
             DisplayPlayerRules();
             GameMode();
+            ChooseWhatGesture();
 
             
             //Figure out how this is going to work!
