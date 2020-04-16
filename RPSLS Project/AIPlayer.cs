@@ -6,7 +6,7 @@ namespace RPSLS_Project
 {
     class AIPlayer : Player
     {
-        private string identifynames;
+
         public AIPlayer()
         {
 

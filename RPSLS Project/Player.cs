@@ -6,11 +6,7 @@ namespace RPSLS_Project
 {
     public class Player
     {
-        public string moves;
-        public string moves1;
-        public string moves2;
-        public string moves3;
-        public string moves4;
+        public int score;
         public string gestureLists;
 
         Human human = new Human();
@@ -28,24 +24,8 @@ namespace RPSLS_Project
             identifynames.Add(player2);
         }
 
-        public Player(string gestureLists)
-        {  //                                                  0       1          2          3        4
-            List<string> gestureList = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
-            //gestureList.Add("Rock");
-            //gestureList.Add("Paper");
-            //gestureList.Add("Scissors");
-            //gestureList.Add("Lizard");
-            //gestureList.Add("Spock");
-        }
+
+        public abstract void GestureList();
+
     }
 }
-// "Rock crushes Scissors"
-// "Scissors cuts Paper"
-// "Paper covers Rock"
-// "Rock crushes Lizard"
-// "Lizard poisons Spock"
-// "Spock smashes Scissors"
-// "Scissors decapitates Lizard"
-// "Lizard eats Paper"
-// "Papers disproves Spock"
-// "Spock vaporizes Rock"

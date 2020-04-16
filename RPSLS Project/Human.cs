@@ -12,10 +12,11 @@ namespace RPSLS_Project
         {
             
         }
-        //public Human(string name, string moves)
-        //{
-        //    this.name = name;
-        //    this.moves = moves;
-        //}
+
+        public override void GestureList()
+        {
+            
+        }
     }
+
 }
