@@ -9,7 +9,7 @@ namespace RPSLS_Project
         public int pointsNeedToWin;
         public Player playerUno;
         public Player playerDos;
-        //public string userInput;
+        //public string userInput; not sure if i need this here.
 
         public Game()
         {
@@ -40,11 +40,12 @@ namespace RPSLS_Project
                     Console.WriteLine("Welcome to the Player vs Player game of R.P.S.L.S!!");
                     break;
                 default:
-                    Console.WriteLine("Choice entered is INVALID!  Please enter 1 to play against the computer, or enter 2 for Player vs Player battle!");
+                    Console.WriteLine("Choice entered is INVALID!  Please enter 1 to play against the computer, or enter 2 for Player vs Player battle! \n");
+                    string userinput = Console.ReadLine();
                     break;
             }
+            return;
         }
-                
 
         public override void WhatGesture()
         {
