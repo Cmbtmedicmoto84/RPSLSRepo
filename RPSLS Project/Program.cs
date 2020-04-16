@@ -6,7 +6,8 @@ namespace RPSLS_Project
     {
         static void Main(string[] args)
         {
-            Human human = new Human();
+            Game game = new Game();
+            game.RunGame();
         }
     }
 }

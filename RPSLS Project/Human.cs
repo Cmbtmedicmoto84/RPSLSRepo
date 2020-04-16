@@ -13,10 +13,9 @@ namespace RPSLS_Project
             
         }
 
-        public override void GestureList()
+        public override void WhatGesture()
         {
             
         }
     }
-
 }

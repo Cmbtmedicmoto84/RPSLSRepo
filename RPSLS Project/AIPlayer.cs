@@ -12,5 +12,10 @@ namespace RPSLS_Project
 
         }
 
+        public override void WhatGesture()
+        {
+            
+        }
+
     }
 }
