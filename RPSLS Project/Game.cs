@@ -9,7 +9,8 @@ namespace RPSLS_Project
         public Player playerDos;
         public int playerUnoScore;
         public int playerDosScore;
-        public int totalPlayersScore;
+        //public int totalPlayersScore;
+        public string gesture;
         
         //public string userInput; not sure if i need this here.
 
@@ -19,6 +20,7 @@ namespace RPSLS_Project
             playerUno = new Human();
             playerUnoScore = 0;
             playerDosScore = 0;
+
             
         }
 
@@ -59,12 +61,74 @@ namespace RPSLS_Project
             return;
         }
 
+        public void CompareSelections()
+        {
+            //readinput?
+
+            bool strongerGesture = false;
+            while (!strongerGesture)
+            {
+                string gesture = Console.ReadLine();
+
+                switch (gesture)
+                {
+                    case "0":
+                        Console.WriteLine();
+                        break;
+                    case "1":
+                        Console.WriteLine();
+                        break;
+                    case "2":
+                        Console.WriteLine();
+                        break;
+                    case "3":
+                        Console.WriteLine();
+                        break;
+                    case "4":
+                        Console.WriteLine();
+                        break;
+                }
+            
+
+            }
+
+            //bool strongerGesture = false;
+            //while (!strongerGesture)
+
+            //int gestures[0] = strong;
+            //bool weakerGesture[2] = true;
+            //bool weakerGesture[3] = true;
+
+            //int gestures = 1;
+            //bool weakerGesture[0] = true;
+            //bool weakerGesture[4] = true;
+
+            //int gestures = 2;
+            //bool weakerGesture[1] = true;
+            //bool weakerGesture[3] = true;
+
+            //int gestures = 3;
+            //bool weakerGesture[4] = true;
+            //bool weakerGesture[1] = true;
+
+            //int gestures = 4;
+            //bool weakerGesture[2] = true;
+            //bool weakerGesture[0] = true;
+
+
+
+            //{
+
+            //}
+        }
+
         public void RunGame()
         {
             DisplayPlayerRules();
             GameMode();
             playerUno.Gesture();
             playerDos.Gesture();
+            CompareSelections();
 
             
             //Figure out how this is going to work!

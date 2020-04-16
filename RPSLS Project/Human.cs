@@ -5,7 +5,7 @@ namespace RPSLS_Project
     class Human : Player
     {
         int playerScore;
-        string gesture;
+        string gestures;
 
         public Human()
         {
