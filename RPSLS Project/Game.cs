@@ -2,18 +2,24 @@
 
 namespace RPSLS_Project
 {
-    class Game : Player
+    class Game
     {
         public int pointsNeedToWin;
         public Player playerUno;
         public Player playerDos;
-        public string[] whatGesture;
+        public int playerUnoScore;
+        public int playerDosScore;
+        public int totalPlayersScore;
+        
         //public string userInput; not sure if i need this here.
 
         public Game()
         {
             pointsNeedToWin = 3;
             playerUno = new Human();
+            playerUnoScore = 0;
+            playerDosScore = 0;
+            
         }
 
         public void DisplayPlayerRules()
@@ -52,51 +58,13 @@ namespace RPSLS_Project
             }
             return;
         }
-        public void ChooseWhatGesture()
-        {
-            Console.WriteLine("Please choose from the list of moves");
-            Console.WriteLine("Type the corresponding number for the selected move: 0 - Rock, 1 - Paper, 2 - Scissors, 3 - Lizard, 4 - Spock \n");
-
-            bool gestureChoice = false;
-            while(!gestureChoice) 
-            {
-                string gesture = Console.ReadLine();
-                switch (gesture)
-                {
-                    case "0":
-                        Console.WriteLine("Player chooses Rock");
-                        gestureChoice = true;
-                        break;
-                    case "1":
-                        Console.WriteLine("Player chooses Paper");
-                        gestureChoice = true;
-                        break;
-                    case "2":
-                        Console.WriteLine("Player chooses Scissors");
-                        gestureChoice = true;
-                        break;
-                    case "3":
-                        Console.WriteLine("Player chooses Lizard");
-                        gestureChoice = true;
-                        break;
-                    case "4":
-                        Console.WriteLine("Player chooses Spock");
-                        gestureChoice = true;
-                        break;
-                    default:
-                        Console.WriteLine("Invalid selection");
-                        break;
-                }
-            }
-            //problem here
-        }
-
 
         public void RunGame()
         {
             DisplayPlayerRules();
             GameMode();
-            ChooseWhatGesture();
+            playerUno.Gesture();
+            playerDos.Gesture();
 
             
             //Figure out how this is going to work!

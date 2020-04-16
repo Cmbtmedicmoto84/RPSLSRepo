@@ -1,30 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RPSLS_Project
 {
     class Human : Player
     {
-        public string humanPlayerName;
-        string[] whatGesture;
-
+        int playerScore;
+        string gesture;
 
         public Human()
         {
-            
+           
         }
 
-        public void AddWhatGesture()
+        public override void Gesture()
         {
-            whatGesture[0] = "";
-            whatGesture[1] = "";
-            whatGesture[2] = "";
-            whatGesture[3] = "";
+            Console.WriteLine("Please choose from the list of moves");
+            Console.WriteLine("Type the corresponding number for the selected move: 0 - Rock, 1 - Paper, 2 - Scissors, 3 - Lizard, 4 - Spock \n");
 
-            foreach (string item in whatGesture)
+            bool gestureChoice = false;
+            while (!gestureChoice)
             {
-                Console.WriteLine(item);
+                string gesture = Console.ReadLine();
+                switch (gesture)
+                {
+                    case "0":
+                        Console.WriteLine("Player chooses Rock");
+                        gestureChoice = true;
+                        break;
+                    case "1":
+                        Console.WriteLine("Player chooses Paper");
+                        gestureChoice = true;
+                        break;
+                    case "2":
+                        Console.WriteLine("Player chooses Scissors");
+                        gestureChoice = true;
+                        break;
+                    case "3":
+                        Console.WriteLine("Player chooses Lizard");
+                        gestureChoice = true;
+                        break;
+                    case "4":
+                        Console.WriteLine("Player chooses Spock");
+                        gestureChoice = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection");
+                        break;
+                }
             }
         }
     }
