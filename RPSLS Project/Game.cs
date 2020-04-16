@@ -27,8 +27,8 @@ namespace RPSLS_Project
             Console.WriteLine("Welcome to the Rock, Paper, Scissors, Lizard, Spock game.");
             Console.WriteLine();
             Console.WriteLine("Here are the rules to the game R.P.S.L.S");
-            Console.WriteLine("Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock");
-            Console.WriteLine("Spock smashes Scissors, Scissors decapitates Lizard,Lizard eats Paper, Papers disproves Spock, Spock vaporizes Rock");
+            Console.WriteLine("Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock,");
+            Console.WriteLine("Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Papers disproves Spock, Spock vaporizes Rock");
         }
 
         public void GameMode()
