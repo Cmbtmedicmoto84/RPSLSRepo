@@ -4,12 +4,10 @@ namespace RPSLS_Project
 {
     class Human : Player
     {
-        int playerScore;
-        string gestures;
 
         public Human()
         {
-           
+            
         }
 
         public override void Gesture()
@@ -24,23 +22,23 @@ namespace RPSLS_Project
                 switch (gesture)
                 {
                     case "0":
-                        Console.WriteLine("Player chooses Rock");
+                        Console.WriteLine("Rock");
                         gestureChoice = true;
                         break;
                     case "1":
-                        Console.WriteLine("Player chooses Paper");
+                        Console.WriteLine("Paper");
                         gestureChoice = true;
                         break;
                     case "2":
-                        Console.WriteLine("Player chooses Scissors");
+                        Console.WriteLine("Scissors");
                         gestureChoice = true;
                         break;
                     case "3":
-                        Console.WriteLine("Player chooses Lizard");
+                        Console.WriteLine("Lizard");
                         gestureChoice = true;
                         break;
                     case "4":
-                        Console.WriteLine("Player chooses Spock");
+                        Console.WriteLine("Spock");
                         gestureChoice = true;
                         break;
                     default:
@@ -48,6 +46,10 @@ namespace RPSLS_Project
                         break;
                 }
             }
+        }
+        public override void GestureOptions()
+        {
+            
         }
     }
 }

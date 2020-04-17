@@ -4,24 +4,14 @@ namespace RPSLS_Project
 {
     class Game
     {
-        public int pointsNeedToWin;
         public Player playerUno;
         public Player playerDos;
         public int playerUnoScore;
         public int playerDosScore;
-        //public int totalPlayersScore;
-        public string gesture;
-        
-        //public string userInput; not sure if i need this here.
 
         public Game()
         {
-            pointsNeedToWin = 3;
             playerUno = new Human();
-            playerUnoScore = 0;
-            playerDosScore = 0;
-
-            
         }
 
         public void DisplayPlayerRules()
@@ -58,82 +48,102 @@ namespace RPSLS_Project
                         break;
                 }
             }
-            return;
         }
 
-        public void CompareSelections()
+        public void CompareSelections(Player playerUno, Player playerDos)
         {
-            //readinput?
-
-            bool strongerGesture = false;
-            while (!strongerGesture)
+            bool gestCompare = true;
+            while (gestCompare)
             {
-                string gesture = Console.ReadLine();
-
-                switch (gesture)
+                if(playerUno.gestChoice == "Rock" && (playerDos.gestChoice == "Scissors" || playerDos.gestChoice == "Lizard"))
                 {
-                    case "0":
-                        Console.WriteLine();
-                        break;
-                    case "1":
-                        Console.WriteLine();
-                        break;
-                    case "2":
-                        Console.WriteLine();
-                        break;
-                    case "3":
-                        Console.WriteLine();
-                        break;
-                    case "4":
-                        Console.WriteLine();
-                        break;
+                    Console.WriteLine("Rock Wins!");
+                    playerUnoScore++;
+                    gestCompare = true;
                 }
-            
-
+                else if (playerUno.gestChoice == "Paper" && (playerDos.gestChoice == "Rock" || playerDos.gestChoice == "Spock"))
+                {
+                    Console.WriteLine("Paper Wins!");
+                    playerUnoScore++;
+                    gestCompare = true;
+                }
+                else if (playerUno.gestChoice == "Scissors" && (playerDos.gestChoice == "Paper" || playerDos.gestChoice == "Lizard"))
+                {
+                    Console.WriteLine("Scissors Wins!");
+                    playerUnoScore++;
+                    gestCompare = true;
+                }
+                else if (playerUno.gestChoice == "Lizard" && (playerDos.gestChoice == "Spock" || playerDos.gestChoice == "Paper"))
+                {
+                    Console.WriteLine("Lizard Wins!");
+                    playerUnoScore++;
+                    gestCompare = true;
+                }
+                else if (playerUno.gestChoice == "Spock" && (playerDos.gestChoice == "Scissors" || playerDos.gestChoice == "Rock"))
+                {
+                    Console.WriteLine("Spock Wins!");
+                    playerUnoScore++;
+                    gestCompare = true;
+                }
+                else if (playerDos.gestChoice == "Rock" && (playerUno.gestChoice == "Scissors" || playerUno.gestChoice == "Lizard"))
+                {
+                    Console.WriteLine("Rock Wins!");
+                    playerDosScore++;
+                    gestCompare = true;
+                }
+                else if (playerDos.gestChoice == "Paper" && (playerUno.gestChoice == "Rock" || playerUno.gestChoice == "Spock"))
+                {
+                    Console.WriteLine("Paper Wins!");
+                    playerDosScore++;
+                    gestCompare = true;
+                }
+                else if (playerDos.gestChoice == "Scissors" && (playerUno.gestChoice == "Lizard" || playerUno.gestChoice == "Paper"))
+                {
+                    Console.WriteLine("Scissors Wins!");
+                    playerDosScore++;
+                    gestCompare = true;
+                }
+                else if (playerDos.gestChoice == "Lizard" && (playerUno.gestChoice == "Paper" || playerUno.gestChoice == "Spock"))
+                {
+                    Console.WriteLine("Lizard Wins!");
+                    playerDosScore++;
+                    gestCompare = true;
+                }
+                else if (playerDos.gestChoice == "Spock" && (playerUno.gestChoice == "Rock" || playerUno.gestChoice == "Scissors"))
+                {
+                    Console.WriteLine("Spock Wins!");
+                    playerDosScore++;
+                    gestCompare = true;
+                }
             }
-
-            //bool strongerGesture = false;
-            //while (!strongerGesture)
-
-            //int gestures[0] = strong;
-            //bool weakerGesture[2] = true;
-            //bool weakerGesture[3] = true;
-
-            //int gestures = 1;
-            //bool weakerGesture[0] = true;
-            //bool weakerGesture[4] = true;
-
-            //int gestures = 2;
-            //bool weakerGesture[1] = true;
-            //bool weakerGesture[3] = true;
-
-            //int gestures = 3;
-            //bool weakerGesture[4] = true;
-            //bool weakerGesture[1] = true;
-
-            //int gestures = 4;
-            //bool weakerGesture[2] = true;
-            //bool weakerGesture[0] = true;
-
-
-
-            //{
-
-            //}
+        }
+        public void AnnounceWinner(int playerUnoScore, int playerDosScore)
+        {
+            if (playerUnoScore == 3 && playerDosScore < 3)
+            {
+                Console.WriteLine("Player One Wins!");
+            }
+            else if (playerDosScore == 3 && playerUnoScore < 3)
+            {
+                Console.WriteLine("Player Two Wins!");
+            }
         }
 
         public void RunGame()
         {
             DisplayPlayerRules();
             GameMode();
-            playerUno.Gesture();
-            playerDos.Gesture();
-            CompareSelections();
-
             
-            //Figure out how this is going to work!
-            //playerUno.WhatGesture();
-            //playerDos.WhatGesture();
+            while(playerUnoScore < 3 && playerDosScore < 3)
+            {   
+                playerUno.Gesture();
+                playerDos.Gesture();
+            }
+            CompareSelections(playerUno, playerDos);
+            AnnounceWinner(playerUnoScore, playerDosScore);
+            {
+                Console.ReadLine();
+            }
         }
 
         

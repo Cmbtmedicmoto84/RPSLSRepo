@@ -6,24 +6,54 @@ namespace RPSLS_Project
 {
     class AIPlayer : Player
     {
-        string gesture;
-        int gestRoll;
-        Random random = new Random();
-
         public AIPlayer()
         {
             
         }
+
         public override void Gesture()
         {
-
+            Random random = new Random();
+            int aIGesture = random.Next(gestures.Count);
+            bool aIChoice = false;
+            while (!aIChoice)
+            {
+                if(aIGesture == 0)
+                {
+                    gestChoice = "Rock";
+                    Console.WriteLine("A.I. chose Rock");
+                    aIChoice = true;
+                }
+                else if (aIGesture == 1)
+                {
+                    gestChoice = "Paper";
+                    Console.WriteLine("A.I. chose Paper");
+                    aIChoice = true;
+                }
+                else if (aIGesture == 2)
+                {
+                    gestChoice = "Scissors";
+                    Console.WriteLine("A.I. chose Scissors");
+                    aIChoice = true;
+                }
+                else if (aIGesture == 3)
+                {
+                    gestChoice = "Lizard";
+                    Console.WriteLine("A.I. chose Lizard");
+                    aIChoice = true;
+                }
+                else if (aIGesture == 4)
+                {
+                    gestChoice = "Spock";
+                    Console.WriteLine("A.I. chose Spock");
+                    aIChoice = true;
+                }
+            }
+            
         }
-
-        public void indRoll()
+        public override void GestureOptions()
         {
-            int gestRoll = random.Next(0, 4); //how do i get this to equal a usable result???
-            Console.WriteLine();
-            return;
+            
         }
     }
 }
