@@ -53,7 +53,7 @@ namespace RPSLS_Project
         public void CompareSelections(Player playerUno, Player playerDos)
         {
             bool gestCompare = true;
-            while (gestCompare)
+            while (!gestCompare)
             {
                 if(playerUno.gestChoice == "Rock" && (playerDos.gestChoice == "Scissors" || playerDos.gestChoice == "Lizard"))
                 {
